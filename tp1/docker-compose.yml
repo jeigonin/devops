@@ -9,10 +9,10 @@ services:
     ports:
       - 8080:8080
 
-  db:
-    image: postgres
-    restart: always
-    environment:
-        POSTGRES_USER: usr
-        POSTGRES_PASSWORD: pwd
-        POSTGRES_DB: db
+  # db:
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #       POSTGRES_USER: usr
+  #       POSTGRES_PASSWORD: pwd
+  #       POSTGRES_DB: db
