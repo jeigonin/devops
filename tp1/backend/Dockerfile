@@ -1,9 +1,10 @@
 FROM openjdk:11
-# Build Main.java
-# ...
+WORKDIR /usr/src/
+COPY Main.java .
+RUN javac Main.java
+RUN pwd && ls
 
 FROM openjdk:11-jre
-# Copy resource from previous stage
-COPY Main.class /usr/src/app
-# Run java code with the JRE
-CMD ["java", "Main"]
+WORKDIR /usr/src/
+COPY --from=0 /usr/src/Main.class .
+RUN java Main
