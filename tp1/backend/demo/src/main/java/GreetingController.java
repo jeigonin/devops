@@ -1,3 +1,4 @@
+package fr.takima.training.simpleapi.controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.atomic.AtomicLong;
 
