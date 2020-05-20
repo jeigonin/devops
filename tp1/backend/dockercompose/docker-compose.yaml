@@ -1,0 +1,33 @@
+version: '3'
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=usr
+      - POSTGRES_PASSWORD=pwd
+    # volumes:
+    #   - /postgres/data:/var/lib/postgresql/data
+    networks:
+      - devops-net
+  back:
+    container_name: simple-app
+    image: simple-app
+    depends_on:
+      - db
+    networks:
+      - devops-net
+  httpd:
+    container_name: apache
+    image: apache
+    ports:
+      - "80:80"
+    depends_on:
+      - back
+    networks:
+      - devops-net
+
+networks:
+  devops-net:
+    driver: bridge

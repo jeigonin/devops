@@ -18,3 +18,6 @@ docker network create devops-net
 docker network connect devops-net db1-tp1
 docker run -d -p 8081:8080 --name simple-api --network=devops-net simple-app
 
+
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
