@@ -1,4 +1,4 @@
-#Takima DevOps training course
+# Takima DevOps training course
 
 Devops work parts of https://github.com/takima-training course
 
